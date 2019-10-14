@@ -1,0 +1,97 @@
+@import '~bootstrap/scss/bootstrap';
+
+$black: #000;
+
+.border {
+  border: 3px solid $black;
+  margin: 20px;
+  padding: 20px;
+}
+
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+body {
+  background-color: grey;
+  font-family: Muli, sans-serif;
+  font-weight: bold;
+  color: #779CB7;
+  margin-top: 30px;
+}
+#container {
+width: 320px;
+height: 320px;
+margin:  auto;
+margin-top: 100px;
+}
+#container h1 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+ .signIn {
+   display: inline-block;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border: 1px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 15px;
+}
+
+ .signUp {
+   display: inline-block;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border: 1px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 15px;
+
+}
+.q {
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 100px;
+}
+
+.q:hover {
+  background-color: azure;
+}
+#q0, #q1, #q2, #q3, #q4, #q5, {
+  border-bottom: 10px solid black;
+}
+#q2, #q5, #q8, #q1, #q4, #q7 {
+  border-left: 10px solid black;
+}
+.winner {
+  color: red;
+}
+.clearfix {
+    clear: both;
+}
+
+.start {
+    font-size: 15px;
+    background-color: #green;
+    color: black;
+    border: 3px solid black;
+    margin-top: 15px;
+    text-align: center;
+}
