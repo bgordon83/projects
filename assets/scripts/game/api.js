@@ -11,6 +11,7 @@ const createGame = function(event) {
     data: '{}'
   })
 }
+
 const getGameTotal = function (event) {
   return $.ajax({
     method: 'GET',

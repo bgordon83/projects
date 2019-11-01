@@ -1,61 +1,59 @@
 'use strict'
-
-// require store object, so we can save the user
-// and their token
 const store = require('../store')
 
 const successMessage = function (newText) {
   $('#message').text(newText)
   $('#message').removeClass('failure')
   $('#message').addClass('success')
+  $('form').trigger('reset')
 }
 
 const failureMessage = function (newText) {
   $('#message').text(newText)
-  $('#message').removeClass('success')
-  $('#message').addClass('failure')
-}
-const onSignUpSuccess = function () {
-  successMessage('Signed up successfully!')
+
 }
 
-const onSignUpFailure = function () {
-  failureMessage('Sign up failed')
+const onSignUpSuccess = () => {
+  successMessage('Signed up Successfully!')
+  $('#message').css('color', 'green')
 }
 
-const onSignInSuccess = function (responseData) {
-  successMessage('Signed in successfully!')
-  console.log('responseData is', responseData)
-  // save the `user` we got from the API inside of `store`
-  // so we can use it later, from any file
+const onSignUpFailure = () => {
+  failureMessage('Signed up Failed')
+  console.log('sign up failed')
+
+}
+const onSignInSuccess = (responseData) => {
+  successMessage('Signed in Successfully')
   store.user = responseData.user
-  console.log('store is', store)
+  $('#sign-up, #sign-in').hide()
+  $('#game').show()
+  $('#change-password').show()
+  $('#sign-out').show()
 }
 
 const onSignInFailure = function () {
-  failureMessage('Sign in failed')
+  $('#message').
 }
 
 const onChangePasswordSuccess = function () {
-  successMessage('Changed password successfully!')
+  successMessage('Changed password successfully')
+  $('#message').css('color', 'green')
 }
 
 const onChangePasswordFailure = function () {
-  failureMessage('Change password failed')
+  failureMessage('Changed password Failed')
 }
 
 const onSignOutSuccess = function () {
-  successMessage('Signed out successfully!')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  successMessage('Signed out successfully')
+  $('#sign-up, #sign-in').show()
+  $('#sign-out').hide()
 }
 
 const onSignOutFailure = function () {
-  failureMessage('Sign out failed')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  failureMessage('Signed out failed')
 }
-
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,

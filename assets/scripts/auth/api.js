@@ -1,7 +1,8 @@
-'use strict'
+const config = require('../config')
+// require `store` so we have access to our `token`
+// so the API knows who we anywhere
+const store = require('../store')
 
-coconst config = require('../config.js')
-const store = require('../store.js')
 
 const signUp = function (formData) {
   return $.ajax({
@@ -15,10 +16,7 @@ const signIn = function (formData) {
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/sign-in',
-    data: formData,
-    success: function () {
-
-    }
+    data: formData
   })
 }
 
@@ -33,14 +31,12 @@ const changePassword = function (formData) {
   })
 }
 
-const signOut = function () {
+const signOut = function (formData) {
   return $.ajax({
-    url: config.apiUrl + '/sign-out',
     method: 'DELETE',
+    url: config.apiUrl + '/sign-out',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    },
-    success: function () {
     }
   })
 }
